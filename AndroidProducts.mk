@@ -17,4 +17,4 @@
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_xcoverpro.mk
 
 COMMON_LUNCH_CHOICES := \
-     omni_xcoverpro-eng
+	omni_xcoverpro-eng

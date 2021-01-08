@@ -1,10 +1,6 @@
 
-odm				/odm		ext4
-product			/product	ext4	
-system			/system		ext4		
-vendor			/vendor		ext4		
-	
-		
+odm				/odm		ext4	display="Odm";logical,first_stage_mount
+product			/product	ext4	display="Product";logical,first_stage_mount	
 
 /efs					ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="EFS"
 /sec_efs				ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="Sec EFS"
