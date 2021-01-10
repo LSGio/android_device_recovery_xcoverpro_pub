@@ -1,25 +1,25 @@
 
-odm				/odm		ext4
-product			/product	ext4	
+odm			/odm			ext4
+product		/product		ext4	
 system			/system		ext4		
 vendor			/vendor		ext4		
 	
 		
 
-/efs					ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="EFS"
-/sec_efs				ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="Sec EFS"
+/efs				ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="EFS"
+/sec_efs			ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="Sec EFS"
 /boot           		emmc	/dev/block/platform/13520000.ufs/by-name/boot				flags=backup=1;display="
 /recovery       		emmc	/dev/block/platform/13520000.ufs/by-name/recovery			flags=backup=1;display="Recovery";flashimg=1
 /metadata       		ext4	/dev/block/platform/13520000.ufs/by-name/metadata			flags=backup=1;display="Metadata"
-/cache          		ext4	/dev/block/platform/13520000.ufs/by-name/cache				flags=backup=1;display="Cache"
+/cache          		ext4	/dev/block/platform/13520000.ufs/by-name/cache			flags=backup=1;display="Cache"
 /data           		f2fs	/dev/block/platform/13520000.ufs/by-name/userdata			        
 /sdcard         		vfat	/dev/block/mmcblk1p1										
-/modem          		emmc	/dev/block/platform/13520000.ufs/by-name/radio				flags=backup=1;display="Modem"
+/modem          		emmc	/dev/block/platform/13520000.ufs/by-name/radio			flags=backup=1;display="Modem"
 /misc           		emmc	/dev/block/platform/13520000.ufs/by-name/misc				
 /cpefs          		ext4	/dev/block/platform/13520000.ufs/by-name/cpefs				
 
 
-/dtbo					emmc	/dev/block/platform/13520000.ufs/by-name/dtbo				
-/prism					ext4	/dev/block/platform/13520000.ufs/by-name/prism				flags=backup=1;display="Prism"
-/optics         		ext4	/dev/block/platform/13520000.ufs/by-name/optics				flags=backup=1;display="Optics"
+/dtbo				emmc	/dev/block/platform/13520000.ufs/by-name/dtbo				
+/prism				ext4	/dev/block/platform/13520000.ufs/by-name/prism			flags=backup=1;display="Prism"
+/optics         		ext4	/dev/block/platform/13520000.ufs/by-name/optics			flags=backup=1;display="Optics"
 /vbmeta_samsung 		emmc	/dev/block/platform/13520000.ufs/by-name/vbmeta_samsung	
