@@ -16,6 +16,6 @@ product			/product	ext4	display="Product";logical,first_stage_mount
 
 
 /dtbo					emmc	/dev/block/platform/13520000.ufs/by-name/dtbo				
-/prism					ext4	/dev/block/platform/13520000.ufs/by-name/prism				flags=backup=1;display="Prism"
+/prism					ext4	/dev/block/platform/13520000.ufs/by-name/prism			flags=backup=1;display="Prism"
 /optics         		ext4	/dev/block/platform/13520000.ufs/by-name/optics				flags=backup=1;display="Optics"
 /vbmeta_samsung 		emmc	/dev/block/platform/13520000.ufs/by-name/vbmeta_samsung	
