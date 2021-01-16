@@ -1,21 +1,29 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-odm				/odm		ext4	display="Odm";logical,first_stage_mount
-product			/product	ext4	display="Product";logical,first_stage_mount	
+# EMMC Points
+/boot               	emmc    /dev/block/platform/13520000.ufs/by-name/boot         	flags=display="Kernel Image";backup=1;flashimg=1
+/recovery           	emmc    /dev/block/platform/13520000.ufs/by-name/recovery     	flags=display="Recovery Image";backup=1;flashimg=1
+/dtbo               	emmc    /dev/block/platform/13520000.ufs/by-name/dtbo         	flags=display="DTBO Image";backup=1;flashimg=1
+/optics_image       	emmc    /dev/block/platform/13520000.ufs/by-name/optics       	flags=display="Optics Image";backup=1;flashimg=1
+/prism_image        	emmc    /dev/block/platform/13520000.ufs/by-name/prism        	flags=display="Prism Image";backup=1;flashimg
+/vbmeta_samsung   	emmc    /dev/block/platform/13520000.ufs/by-name/vbmeta_samsung 	flags=display="Vbmeta Samsung Image";backup=1;flashimg
 
-/efs					ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="EFS"
-/sec_efs				ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs			flags=backup=1;display="Sec EFS"
-/boot           		emmc	/dev/block/platform/13520000.ufs/by-name/boot				flags=backup=1;display="
-/recovery       		emmc	/dev/block/platform/13520000.ufs/by-name/recovery			flags=backup=1;display="Recovery";flashimg=1
-/metadata       		ext4	/dev/block/platform/13520000.ufs/by-name/metadata			flags=backup=1;display="Metadata"
-/cache          		ext4	/dev/block/platform/13520000.ufs/by-name/cache				flags=backup=1;display="Cache"
-/data           		f2fs	/dev/block/platform/13520000.ufs/by-name/userdata			        
-/sdcard         		vfat	/dev/block/mmcblk1p1										
-/modem          		emmc	/dev/block/platform/13520000.ufs/by-name/radio				flags=backup=1;display="Modem"
-/misc           		emmc	/dev/block/platform/13520000.ufs/by-name/misc				
-/cpefs          		ext4	/dev/block/platform/13520000.ufs/by-name/cpefs				
+# Logical Points (<src> <flags>)
+/system             flags=display="System";logical
+#/product            flags=display="Product";logical
+/vendor             flags=display="Vendor";logical
+/odm                flags=display="ODM";logical
 
+# Cache and ETC Points
+/cache              ext4    /dev/block/platform/13520000.ufs/by-name/cache         flags=display="Cache";backup=1;wipeingui
+/efs                ext4    /dev/block/platform/13520000.ufs/by-name/efs           flags=display="EFS";backup=1
+/data               f2fs    /dev/block/platform/13520000.ufs/by-name/userdata      flags=display="Userdata";backup=1;encryptable=footer;length=-20480;encryptable=ice;wipeingui
 
-/dtbo					emmc	/dev/block/platform/13520000.ufs/by-name/dtbo				
-/prism					ext4	/dev/block/platform/13520000.ufs/by-name/prism			flags=backup=1;display="Prism"
-/optics         		ext4	/dev/block/platform/13520000.ufs/by-name/optics				flags=backup=1;display="Optics"
-/vbmeta_samsung 		emmc	/dev/block/platform/13520000.ufs/by-name/vbmeta_samsung	
+# Optics, SEC and Prism Points
+/prism              ext4    /dev/block/platform/13520000.ufs/by-name/prism         flags=display="Prism";backup=1
+/optics             ext4    /dev/block/platform/13520000.ufs/by-name/optics        flags=display="Optics";backup=1
+
+# Metadata Point
+/metadata           ext4    /dev/block/platform/13520000.ufs/by-name/metadata      flags=display="Metadata";backup=1

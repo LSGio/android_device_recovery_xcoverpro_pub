@@ -14,21 +14,9 @@
 # limitations under the License.
 #
 
-
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-
-## OLD
-# Release name
-#PRODUCT_RELEASE_NAME := xcoverpro
-
-# Inherit android base
-#$(call inherit-product, build/target/product/core_minimal.mk)
-
-# Inherit from our custom product configuration
-#$(call inherit-product, vendor/omni/config/common.mk)
-## ENDOFOLD
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := xcoverpro
@@ -36,4 +24,6 @@ PRODUCT_NAME := omni_xcoverpro
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G715FN
 PRODUCT_MANUFACTURER := samsung
+
+
 
